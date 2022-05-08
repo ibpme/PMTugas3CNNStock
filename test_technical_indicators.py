@@ -98,3 +98,16 @@ def Test_RSI():
 
 if __name__ == '__main__':
     Test_SAR()
+    Test_CCI()
+    Test_TRANGE()
+    Test_EMA()
+    Test_STOCH()
+    Test_AROON()
+    Test_SMA()
+    Test_BBANDS()
+    Test_VMAP()
+    Test_OBV()
+    Test_MACD()
+    Test_AD()
+    Test_ADX()
+    Test_RSI()
