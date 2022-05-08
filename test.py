@@ -36,7 +36,7 @@ def Test_SAR():
         6508.429328,
         6567.58956,
     ])
-    result = SAR(data).values
+    result = SAR(data)
     assert result == want
 
 

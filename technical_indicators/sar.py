@@ -127,4 +127,4 @@ def SAR(price, acceleration = 0.01, maximum = 0.20, step = 0.02):
     - indicator (np.array)
     """
     inidcator = PSAR(acceleration, maximum, step)
-    return price.apply(lambda x: inidcator.calcPSAR(x['High'], x['Low']), axis = 1)
+    return price.apply(lambda x: inidcator.calcPSAR(x['High'], x['Low']), axis = 1).values
