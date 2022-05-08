@@ -4,7 +4,7 @@ from collections import deque
 
 class PSAR:
 
-    def __init__(self, init_af=0.02, max_af=0.2, af_step=0.02):
+    def __init__(self, init_af:float=0.02, max_af:float=0.2, af_step:float=0.02):
         self.max_af = max_af
         self.init_af = init_af
         self.af = init_af
@@ -110,14 +110,28 @@ class PSAR:
 
         return psar
 
-def SAR(data: pd.DataFrame, acceleration = 0.01, maximum = 0.20, step = 0.02) -> np.ndarray:
+def SAR(data: pd.DataFrame, acceleration:float = 0.01, maximum:float = 0.20, step:float = 0.02) -> np.ndarray:
     """
-    The Parabolic SAR calculates a trailing stop. 
-    Simply exit when the price crosses the SAR. 
-    The SAR assumes that you are always in the 
-    market, and calculates the Stop And Reverse 
-    point when you would close a long position 
-    and open a short position or vice versa.
+    SAR menghitung trailing stop secara rekursif.
+    SAR mengasumsi bahwa trader selalu memiliki 
+    posisi di market, baik itu long atau short.
+    SAR memberi sebuah nilai dimana jika harga 
+    melewati itu, sebaiknya disarankan untuk 
+    keluar dari posisi.
+
+    $\begin{algorithm}
+    \If{long and $high > xp$}
+    {
+        $xp = high$
+        $af = af + step$
+    }
+    \If{short and $low < xp$}
+    {
+        $xp = low$
+        $af = af + step$
+    }
+    $SAR(t) = (xp - SAR(t-1))\times af + SAR(t-1)$
+    \end{algorithm}$
 
     Input
     - price (np.array)
