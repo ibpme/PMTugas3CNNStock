@@ -1,3 +1,5 @@
+import numpy as np
+import pandas as pd
 from collections import deque
 
 class PSAR:
@@ -108,7 +110,7 @@ class PSAR:
 
         return psar
 
-def SAR(price, acceleration = 0.01, maximum = 0.20, step = 0.02):
+def SAR(data: pd.DataFrame, acceleration = 0.01, maximum = 0.20, step = 0.02) -> np.ndarray:
     """
     The Parabolic SAR calculates a trailing stop. 
     Simply exit when the price crosses the SAR. 
@@ -127,4 +129,4 @@ def SAR(price, acceleration = 0.01, maximum = 0.20, step = 0.02):
     - indicator (np.array)
     """
     inidcator = PSAR(acceleration, maximum, step)
-    return price.apply(lambda x: inidcator.calcPSAR(x['High'], x['Low']), axis = 1).values
+    return data.apply(lambda x: inidcator.calcPSAR(x['High'], x['Low']), axis = 1).values
