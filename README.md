@@ -9,7 +9,7 @@ pip3 install -r requirements.txt
 ## Run Testing
 
 ```bash
-python test.py
+python test_technical_indicators.py
 ```
 
 ## Tugas 3 - CNN untuk prediksi harga saham
