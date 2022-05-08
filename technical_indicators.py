@@ -1,67 +1,69 @@
 import numpy as np
+import pandas as pd
 
 ### GARRY ###
 
 
-def SAR(data: np.ndarray) -> np.ndarray:
+def SAR(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def CCI(data: np.ndarray) -> np.ndarray:
+def CCI(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def TRANGE(data: np.ndarray) -> np.ndarray:
+def TRANGE(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def EMA(data: np.ndarray) -> np.ndarray:
+def EMA(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def STOCH(data: np.ndarray) -> np.ndarray:
+def STOCH(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def AROON(data: np.ndarray) -> np.ndarray:
+def AROON(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def SMA(data: np.ndarray) -> np.ndarray:
+def SMA(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def BBANDS(data: np.ndarray) -> np.ndarray:
+def BBANDS(data: pd.DataFrame) -> np.ndarray:
     pass
 
 ### BUDI ###
 
 
-def VMAP(data: np.ndarray) -> np.ndarray:
+def VMAP(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def OBV(data: np.ndarray) -> np.ndarray:
+def OBV(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def MACD(data: np.ndarray) -> np.ndarray:
+def MACD(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def AD(data: np.ndarray) -> np.ndarray:
+def AD(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def ADX(data: np.ndarray) -> np.ndarray:
+def ADX(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
-def RSI(data: np.ndarray) -> np.ndarray:
+def RSI(data: pd.DataFrame) -> np.ndarray:
     pass
 
 
 if __name__ == "__main__":
-    data_sample = np.random.randint(100, 120, size=30)
-    print(data_sample)
+    import pandas as pd
+    data = pd.read_csv("./data/data.csv")
+    print(data["Open"])
     pass
