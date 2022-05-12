@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-def STOCH(data: pd.DataFrame) -> tuple(np.ndarray, np.ndarray):
+def STOCH(data: pd.DataFrame, periods:int = 14) -> tuple(np.ndarray, np.ndarray):
 
     high_roll = data["High"].rolling(periods).max()
     low_roll = data["Low"].rolling(periods).min()
