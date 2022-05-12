@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-def STOCH(data: pd.DataFrame, periods:int = 14) -> tuple(np.ndarray, np.ndarray):
+def STOCH(data: pd.DataFrame, periods:int = 14):
 
     high_roll = data["High"].rolling(periods).max()
     low_roll = data["Low"].rolling(periods).min()
@@ -12,5 +12,5 @@ def STOCH(data: pd.DataFrame, periods:int = 14) -> tuple(np.ndarray, np.ndarray)
     slow_k = (num / denom) * 100
     
     # Slow stochastic indicator
-    slow_d = data["%K"].rolling(3).mean()
-    return slow_k, slow_d
+    slow_d = slow_k.rolling(3).mean()
+    return slow_k.values, slow_d.values

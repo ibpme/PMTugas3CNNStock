@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from sympy import N
 
 
 def DI(data: pd.DataFrame) -> tuple:

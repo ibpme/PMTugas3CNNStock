@@ -19,4 +19,4 @@ def CCI(data: pd.DataFrame, time_period:int =10) -> np.ndarray:
     atp = tp.rolling(time_period).mean()
     md = tp.rolling(time_period).apply(lambda x: pd.Series(x).mad())
     cci = (tp - atp) / (0.015 * md)
-    return cci
+    return cci.values

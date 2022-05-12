@@ -13,7 +13,7 @@ def OBV(data: pd.DataFrame) -> np.ndarray:
             current_obv = obv[i-1]
         obv.append(current_obv)
 
-    return np.array(obv[1:])
+    return np.array(obv)
 
 if __name__ == "__main__":
     data = pd.read_csv("../data/data.csv")

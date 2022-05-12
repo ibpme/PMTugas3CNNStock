@@ -8,7 +8,7 @@ def AD(data: pd.DataFrame) -> np.ndarray:
     low = data["Low"].values
     high = data["High"].values
     volume = data["Volume"].values
-    clv = (2*close - low - high)/(high-low)
+    clv = (2*close - low - high)/(high-low + 1e-5)
     for vol in volume:
         ad += clv*vol
     return np.array(ad)
